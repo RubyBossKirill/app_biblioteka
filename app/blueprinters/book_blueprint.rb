@@ -1,4 +1,6 @@
-class BookBlueprint < Blueprinter::Base
+# frozen_string_literal: true
+
+class BookBlueprint < Blueprinter::Base # rubocop:disable Style/Documentation
   identifier :id
 
   view :base do

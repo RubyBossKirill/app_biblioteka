@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :book do
-    title { "MyString" }
-    author { "MyString" }
-    published_year { "MyString" }
+    title { Faker::Name.name }
+    author { Faker::FunnyName.name }
+    published_year { '01.01.2000' }
   end
 end
