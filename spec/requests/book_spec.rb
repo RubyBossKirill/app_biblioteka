@@ -13,9 +13,13 @@ RSpec.describe 'Books', type: :request do
     it 'returns http created' do
       post '/api/v1/books', params: params
       expect(response).to have_http_status(:created)
-      # expect(response.title).to eq('New Title')
-      # expect(response.author).to eq('New author')
-      # expect(response.published_year).to eq('01.01.2000')
+
+      body = JSON.parse(response.body)
+      result = JSON.parse(body['result'])
+
+      expect(result['title']).to eq('New Title')
+      expect(result['author']).to eq('New author')
+      expect(result['published_year']).to eq('01.01.2000')
     end
   end
 
